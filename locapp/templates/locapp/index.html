@@ -1,0 +1,17 @@
+{% extends 'base.html' %} {% load crispy_forms_tags %} {% block body %}
+<div class="Jumbotron mt-4">
+  <div class="container-fluid">
+    <form method="POST">
+      {% csrf_token %}
+      <div class="col-md-4">{{form | crispy}}</div>
+      <input type="submit" class="btn btn-success mt-3" value="Search" />
+    </form>
+    <div class="mt-2"></div>
+    This product includes GeoLite2 data created by MaxMind, available from
+    <a href="https://www.maxmind.com">https://www.maxmind.com</a>.
+    <h6>Copyright Developer @Syed M. Arfa</h6>
+  </div>
+</div>
+
+<div class="mt-3">{{map| safe}}</div>
+{% endblock body %}
